@@ -1,0 +1,17 @@
+form {
+    background-color: #EAEAEA;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid transparent;
+
+    input {
+        border: none;
+        font-weight: bold;
+        background-color: #EAEAEA;
+        color: black;    
+    }
+}
