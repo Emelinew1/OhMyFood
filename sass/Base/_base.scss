@@ -11,15 +11,20 @@ body {
     font-size: 24px;
   }
   
+  footer h3 {
+    font-family: 'Shrikhand' , cursive; 
+  }
+
   ul {
-    margin: 0;
     padding: 0;
     list-style: none;
   }
 
   li {
+    width: 90%;
     border-radius: 15px;
     padding: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   }
   
   img {

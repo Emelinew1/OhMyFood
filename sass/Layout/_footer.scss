@@ -1,0 +1,13 @@
+footer {
+    padding: 22px 25px;
+    background-color: var(--filter-grey);
+    color: white;
+  
+    li {
+      display: flex;
+      align-items: flex-start;
+      padding: 7px;
+      gap: 7px;
+    }
+  }
+  
