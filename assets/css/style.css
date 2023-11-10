@@ -25,13 +25,23 @@ a {
 }
 
 button {
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
   color: white;
   font-weight: 500;
   background: var(--button-color);
   padding: 18px;
+  margin-bottom: 40px;
   border-radius: 25px;
   border: 1px solid transparent;
   box-shadow: 0px 4px 7px 1px rgb(180, 180, 180);
+}
+
+.menu .line {
+  border-bottom: 2px solid var(--third-color);
+  width: 40px;
+  height: 3px;
 }
 
 footer {
@@ -68,7 +78,7 @@ form input {
 
 header img {
   height: 36px;
-  padding: 14px 89px 13px 89px;
+  padding: 14px 89px 13px;
 }
 
 .presentation {
@@ -114,7 +124,7 @@ header img {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 29px 38px 28px 37.5px;
+  padding: 29px 38px 28px 37px;
   background: var(--lightgrey-color);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
@@ -201,6 +211,95 @@ header img {
   position: relative;
   top: -38px;
   font-size: 20px;
+}
+
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-menu img {
+  padding: 14px 89px 13px 13px;
+}
+
+.main-menu {
+  background-color: var(--lightgrey-color);
+  display: flex;
+  flex-direction: column;
+}
+.main-menu figure {
+  margin: 0;
+  width: 100%;
+  object-fit: cover;
+  height: 275px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--lightgrey-color);
+  bottom: 50px;
+  border-radius: 40px 40px 0px 0px;
+  padding: 0 20px;
+}
+.menu h1 {
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  font-family: "Shrikhand", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: normal;
+}
+.menu i {
+  padding-right: 25px;
+  position: absolute;
+  top: 38px;
+  right: 20px;
+  font-size: 25px;
+}
+.menu h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px 0 40px 0;
+}
+.menu li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  height: 69px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 15px;
+  gap: 5px;
+}
+.menu h3 {
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 500;
+}
+.menu p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+}
+.menu b {
+  align-self: flex-end;
+  bottom: 24px;
+  position: relative;
+  font-size: 15px;
 }
 
 :root {
