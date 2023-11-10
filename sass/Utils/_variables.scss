@@ -1,9 +1,12 @@
 :root {
-    --primary-color:#9356DC;
+    --primary-color: #9356DC;
     --secondary-color: #FF79DA;
     --third-color: #99E2D0;
-    --filter-grey:#353535;
-    --filter-light-grey: #EAEAEA;
+    --green-color: #008766;
+    --blue-color: #89C8FA;
+    --darkblue-color: #003A68;
+    --lightgrey-color: #F6F6F6;
+    --darkgrey-color: #353535;
+    --grey-color: #EAEAEA;
+    --button-color: linear-gradient(175deg, rgba(255, 121, 218, 1) 0%, rgba(147, 86, 220, 1) 100%);
 }
-
-$primary-color: black;
