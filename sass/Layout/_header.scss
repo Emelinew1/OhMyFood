@@ -1,4 +1,7 @@
-header img {
-  height: 36px;
-  padding: 14px 89px 13px;
+header:not(.menu header){
+  text-align: center;
+
+  img {
+    height: 36px;
+  }
 }

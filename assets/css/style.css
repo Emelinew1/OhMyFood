@@ -25,17 +25,18 @@ a {
 }
 
 button {
-  width: 100%;
+  width: 186px;
   height: 50px;
-  box-sizing: border-box;
   color: white;
   font-weight: 500;
   background: var(--button-color);
   padding: 18px;
   margin-bottom: 40px;
+  margin-top: -50px;
   border-radius: 25px;
   border: 1px solid transparent;
   box-shadow: 0px 4px 7px 1px rgb(180, 180, 180);
+  cursor: pointer;
 }
 
 .menu .line {
@@ -76,9 +77,11 @@ form input {
   color: black;
 }
 
-header img {
+header:not(.menu header) {
+  text-align: center;
+}
+header:not(.menu header) img {
   height: 36px;
-  padding: 14px 89px 13px;
 }
 
 .presentation {
@@ -163,6 +166,7 @@ header img {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  box-sizing: border-box;
 }
 .restaurants figure {
   margin: 0;
@@ -226,6 +230,8 @@ header img {
   background-color: var(--lightgrey-color);
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 .main-menu figure {
   margin: 0;
@@ -238,6 +244,8 @@ header img {
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
   background-color: var(--lightgrey-color);
   bottom: 50px;
   border-radius: 40px 40px 0px 0px;
@@ -270,6 +278,7 @@ header img {
   flex-direction: column;
   gap: 12px;
   padding: 10px 0 40px 0;
+  margin: 0;
 }
 .menu li {
   display: flex;
