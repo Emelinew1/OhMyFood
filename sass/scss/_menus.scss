@@ -1,17 +1,19 @@
+/*************** header menu page ***************/
+
 .header-menu {
     display: flex;
     position: relative;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     padding: 14px 13px 17px;
 
     a {
         position: absolute;
         left: 15px;
     }
-
 }
 
+/*************** conteneur du menu ***************/
 .main-menu {
     background-color: $lightgrey;
     display: flex;
@@ -25,18 +27,41 @@
         object-fit: cover;
         height: 275px;
     }
-}
 
+    img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+    }
+
+
+}
+/*************** liste menu ***************/
 .menu {
     display: flex;
     flex-direction: column;
-    position: relative;
+    align-items: flex-start;
     width: 100%;
     box-sizing: border-box;
     background-color: $lightgrey;
-    bottom: 50px;
+    margin-top: -70px;
     border-radius: 40px 40px 0px 0px;
     padding: 0 20px;
+
+    header {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        i {
+            top: 38px;
+            right: -40px;
+            position: absolute;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+    }
 
     h1 {
         margin: 0;
@@ -48,14 +73,6 @@
         line-height: normal;
     }
 
-    i {
-        padding-right: 25px;
-        position: absolute;
-        top: 38px;
-        right: 20px;
-        font-size: 25px;
-    }
-
     h2 {
         margin: 0;
         font-size: $principal-font-size;
@@ -63,16 +80,23 @@
         text-transform: uppercase;
     }
 
+    section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+    }
+
     ul {
         display: flex;
         flex-direction: column;
         gap: 12px;
         padding: 10px 0 40px 0;
-        margin: 0;
     }
 
     li {
         display: flex;
+        width: 100%;
         flex-direction: column;
         align-items: flex-start;
         box-sizing: border-box;
@@ -94,6 +118,8 @@
 
     p {
         margin: 0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         font-size: $third-font-size;
         font-weight: $normal-font-weight;
     }
@@ -103,5 +129,29 @@
         bottom: 24px;
         position: relative;
         font-size: 15px;
+    }
+
+    a {
+        align-self: center;
+        margin-bottom: 50px;
+    }
+}
+
+/****** Media queries ***********/
+@media (min-width: 768px) {
+
+    .main-menu {
+        background-color: $white;
+    }
+
+
+    .menu {
+        width: 50%;
+        padding: 0 160px;
+        box-sizing: content-box;
+
+        header {
+            align-self: center;
+        }
     }
 }

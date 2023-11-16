@@ -77,7 +77,7 @@ footer h3 {
     gap: 100px;
   }
 }
-/* Form */
+/*************** form search ***************/
 form {
   background-color: #EAEAEA;
   display: flex;
@@ -95,37 +95,123 @@ form input {
   color: black;
 }
 
-/* button */
-button {
+/*************** button ***************/
+.button {
+  display: flex;
+  justify-content: center;
   width: 186px;
-  height: 50px;
   color: white;
   font-weight: 500;
   background: linear-gradient(0deg, #9356dc 0%, #ff79da 100%);
   padding: 18px;
-  margin-bottom: 40px;
-  margin-top: -50px;
+  margin: 20px;
   border-radius: 25px;
-  border: 1px solid transparent;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   transition: background-color 0.3s, box-shadow 0.3s;
   cursor: pointer;
 }
-button:hover {
+.button:hover {
   box-shadow: 0px 8px 12px 2px rgb(180, 180, 180);
   transform: scale(1.01);
   opacity: 0.9;
 }
 
-/* Line */
+/*************** line tittle menu ***************/
 .menu .line {
   border-bottom: 2px solid #99E2D0;
   width: 40px;
   height: 3px;
 }
 
-/* BREAKPOINTS */
 /* ANIMATIONS */
+/*************** Heart ***************/
+.heart {
+  opacity: 0;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: all 1.5s ease-in-out;
+  background-image: linear-gradient(0deg, #9356dc 0%, #ff79da 100%);
+}
+.heart:hover {
+  opacity: 1;
+}
+.heart .heart::after {
+  content: "";
+  opacity: 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: all 1.5s ease-in-out;
+}
+.heart .heart:hover::after {
+  opacity: 0;
+}
+
+/*************** Loader ***************/
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #F6F6F6;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  animation: fadeOut 2s linear forwards;
+}
+.loader-container .loader {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  position: relative;
+  animation: rotate 2.5s linear infinite, changeColor 2s linear;
+}
+.loader-container .fork {
+  position: absolute;
+  color: black;
+  opacity: 0.8;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4em;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+@keyframes changeColor {
+  0% {
+    border-top: 8px solid #9356DC;
+  }
+  50% {
+    border-top: 8px solid #FF79DA;
+  }
+  100% {
+    border-top: 8px solid #9356DC;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+/*************** animation menu ***************/
+/*************** header ***************/
 .presentation {
   background-color: #F6F6F6;
   display: flex;
@@ -143,23 +229,8 @@ button:hover {
   margin: 0;
   padding-bottom: 20px;
 }
-.presentation a {
-  color: white;
-  font-weight: 500;
-  background: linear-gradient(0deg, #9356dc 0%, #ff79da 100%);
-  padding: 18px;
-  margin: 20px;
-  border-radius: 25px;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-  transition: background-color 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-}
-.presentation a:hover {
-  box-shadow: 0px 8px 12px 2px rgb(180, 180, 180);
-  transform: scale(1.01);
-  opacity: 0.9;
-}
 
+/*************** fonctionnement ***************/
 .fonctionnement {
   padding: 18px;
   font-weight: 500;
@@ -181,6 +252,7 @@ button:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   cursor: pointer;
+  /*************** counter ***************/
 }
 .fonctionnement li::before {
   counter-increment: li;
@@ -204,9 +276,12 @@ button:hover {
   color: #7E7E7E;
 }
 
+/*************** presentation restaurant ***************/
 .restaurants {
   background-color: #F6F6F6;
   padding: 20px;
+  /*************** new information ***************/
+  /*************** heart ***************/
 }
 .restaurants ul {
   display: flex;
@@ -262,19 +337,8 @@ button:hover {
   font-size: 20px;
   cursor: pointer;
 }
-.restaurants .fa-solid {
-  opacity: 0;
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  transition: all 0.6s ease-in-out;
-  background-image: linear-gradient(0deg, #9356dc 0%, #ff79da 100%);
-}
-.restaurants .fa-solid:hover {
-  opacity: 1;
-}
 
-/****** Media queries ***********/
+/****** Media queries Tablette ***********/
 @media (min-width: 768px) {
   .restaurants {
     box-sizing: border-box;
@@ -293,6 +357,7 @@ button:hover {
     height: 251px;
   }
 }
+/****** Media queries Desktop ***********/
 @media (min-width: 1200px) {
   .fonctionnement {
     padding: 50px 140px;
@@ -300,16 +365,12 @@ button:hover {
   .fonctionnement ol {
     display: flex;
     flex-wrap: nowrap;
-    padding-bottom: 50px;
-    justify-content: flex-start;
-  }
-  .fonctionnement li {
-    width: calc((100% - 40px) / 3);
   }
   .restaurants {
     padding: 50px 140px;
   }
 }
+/*************** header menu page ***************/
 .header-menu {
   display: flex;
   position: relative;
@@ -322,6 +383,7 @@ button:hover {
   left: 15px;
 }
 
+/*************** conteneur du menu ***************/
 .main-menu {
   background-color: #F6F6F6;
   display: flex;
@@ -335,17 +397,35 @@ button:hover {
   object-fit: cover;
   height: 275px;
 }
+.main-menu img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
 
+/*************** liste menu ***************/
 .menu {
   display: flex;
   flex-direction: column;
-  position: relative;
+  align-items: flex-start;
   width: 100%;
   box-sizing: border-box;
   background-color: #F6F6F6;
-  bottom: 50px;
+  margin-top: -70px;
   border-radius: 40px 40px 0px 0px;
   padding: 0 20px;
+}
+.menu header {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.menu header i {
+  top: 38px;
+  right: -40px;
+  position: absolute;
+  font-size: 25px;
+  cursor: pointer;
 }
 .menu h1 {
   margin: 0;
@@ -356,28 +436,27 @@ button:hover {
   font-weight: 400;
   line-height: normal;
 }
-.menu i {
-  padding-right: 25px;
-  position: absolute;
-  top: 38px;
-  right: 20px;
-  font-size: 25px;
-}
 .menu h2 {
   margin: 0;
   font-size: 16px;
   font-weight: 300;
   text-transform: uppercase;
 }
+.menu section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+}
 .menu ul {
   display: flex;
   flex-direction: column;
   gap: 12px;
   padding: 10px 0 40px 0;
-  margin: 0;
 }
 .menu li {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
   box-sizing: border-box;
@@ -397,6 +476,8 @@ button:hover {
 }
 .menu p {
   margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 14px;
   font-weight: 300;
 }
@@ -405,6 +486,25 @@ button:hover {
   bottom: 24px;
   position: relative;
   font-size: 15px;
+}
+.menu a {
+  align-self: center;
+  margin-bottom: 50px;
+}
+
+/****** Media queries ***********/
+@media (min-width: 768px) {
+  .main-menu {
+    background-color: white;
+  }
+  .menu {
+    width: 50%;
+    padding: 0 160px;
+    box-sizing: content-box;
+  }
+  .menu header {
+    align-self: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
