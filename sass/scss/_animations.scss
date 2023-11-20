@@ -4,8 +4,6 @@
 .heart {
     opacity: 0;
     color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
     transition: all 0.8s ease-in-out;
     background-image: $button;
 
@@ -17,9 +15,7 @@
         content: "";
         opacity: 1;
         color: transparent;
-        background-clip: text;
-        -webkit-background-clip: text;
-        transition: all 1.3s ease-in-out;
+        transition: all 1.5s ease-in-out;
     }
 
     .heart:hover::after {
@@ -125,9 +121,9 @@
 }
 
 .desserts {
-    animation: anim-menu 2.8s;
+    animation: anim-menu 3s;
 }
 
-/*************** animation apparition check ***************/
+
 
  
