@@ -33,9 +33,8 @@
         height: 240px;
         object-fit: cover;
     }
-
-
 }
+
 /*************** liste menu ***************/
 .menu {
     display: flex;
@@ -47,31 +46,31 @@
     margin-top: -70px;
     border-radius: 40px 40px 0px 0px;
     padding: 0 20px;
+    row-gap: 40px;
 
     header {
         display: flex;
         align-items: center;
         position: relative;
+        justify-content: space-between;
 
+        h1 {
+            margin: 0;
+            padding-top: 30px;
+            font-family: $secondary-family-font;
+            font-size: 28px;
+            font-weight: $second-medium-font-weight;
+        }
+        
         i {
-            top: 38px;
-            right: -40px;
+            padding-top: 30px;
+            right: -110px;
             position: absolute;
             font-size: 25px;
             cursor: pointer;
         }
-
     }
 
-    h1 {
-        margin: 0;
-        padding-top: 30px;
-        padding-bottom: 40px;
-        font-family: $secondary-family-font;
-        font-size: 28px;
-        font-weight: $second-medium-font-weight;
-        line-height: normal;
-    }
 
     h2 {
         margin: 0;
@@ -84,51 +83,95 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        margin: 0;
     }
 
     ul {
         display: flex;
         flex-direction: column;
         gap: 12px;
-        padding: 10px 0 40px 0;
     }
 
     li {
-        display: flex;
+        display: block;
+        overflow: hidden;
         width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
         box-sizing: border-box;
-        height: 69px;
+        padding: 15px;
+        padding-bottom: 0px;
         background: $white;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         border-radius: 15px;
-        padding: 15px;
-        gap: 5px;
+        cursor: pointer;
+
+/*************** ANIMATION CARDS ***************/
+        &:hover span {
+            transform: translateX(0px);
+            opacity: 1;
+
+
+            &::after {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        &:hover b {
+            transform: translateX(-60px);
+
+        }
+
+        &:hover {
+
+            h3,
+            p {
+                width: 70%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+        }
+    }
+
+
+    span {
+        display: block;
+        position: relative;
+        transition: all 0.3s ease-out;
+        opacity: 0;
+        transform: translateX(100px)
+    }
+
+    .fa-circle-check {
+        position: absolute;
+        bottom: 0px;
+        right: -15px;
+        font-size: 20px;
+        background: $third-color;
+        padding: 29px 20px;
+        border-radius: 0 15px 15px 0;
+        color: white;
     }
 
     h3 {
-        margin: 0;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        font-size: $principal-font-size;
+        font-size: $secondary-font-size;
         font-weight: $medium-font-weight;
+        padding-bottom: 5px;
+        margin: 0;
     }
 
     p {
-        margin: 0;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        font-size: $third-font-size;
+        font-size: 15px;
         font-weight: $normal-font-weight;
+        margin: 0;
     }
 
     b {
-        align-self: flex-end;
-        bottom: 24px;
+        display: flex;
+        justify-content: flex-end;
+        bottom: 18px;
         position: relative;
         font-size: 15px;
+        transition: all 0.4s;
     }
 
     a {
@@ -144,14 +187,17 @@
         background-color: $white;
     }
 
-
     .menu {
         width: 50%;
-        padding: 0 160px;
+        padding: 0 140px;
         box-sizing: content-box;
 
         header {
             align-self: center;
+
+            i {
+                right: -40px;
+            }
         }
     }
 }

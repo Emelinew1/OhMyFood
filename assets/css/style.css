@@ -99,12 +99,14 @@ form input {
 .button {
   display: flex;
   justify-content: center;
+  align-self: center;
   width: 186px;
   color: white;
   font-weight: 500;
   background: linear-gradient(0deg, #9356dc 0%, #ff79da 100%);
   padding: 18px;
   margin: 20px;
+  margin-bottom: 30px;
   border-radius: 25px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   transition: background-color 0.3s, box-shadow 0.3s;
@@ -130,7 +132,7 @@ form input {
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  transition: all 1.5s ease-in-out;
+  transition: all 0.8s ease-in-out;
   background-image: linear-gradient(0deg, #9356dc 0%, #ff79da 100%);
 }
 .heart:hover {
@@ -142,43 +144,13 @@ form input {
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  transition: all 1.5s ease-in-out;
+  transition: all 1.3s ease-in-out;
 }
 .heart .heart:hover::after {
   opacity: 0;
 }
 
 /*************** Loader ***************/
-.loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background-color: #F6F6F6;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  animation: fadeOut 2s linear forwards;
-}
-.loader-container .loader {
-  height: 200px;
-  width: 200px;
-  border-radius: 100px;
-  position: relative;
-  animation: rotate 2.5s linear infinite, changeColor 2s linear;
-}
-.loader-container .fork {
-  position: absolute;
-  color: black;
-  opacity: 0.8;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 4em;
-}
-
 @keyframes rotate {
   0% {
     transform: rotate(0turn);
@@ -210,7 +182,60 @@ form input {
     z-index: -1;
   }
 }
-/*************** animation menu ***************/
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #F6F6F6;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  animation: fadeOut 2s linear forwards;
+}
+.loader-container .loader {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  position: relative;
+  animation: rotate 2.5s linear infinite, changeColor 2s linear;
+}
+.loader-container .fork {
+  position: absolute;
+  color: black;
+  opacity: 0.8;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4em;
+}
+
+/*************** animation apparition menu ***************/
+@keyframes anim-menu {
+  0% {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+.entrees {
+  animation: anim-menu 1s;
+}
+
+.plats {
+  animation: anim-menu 2s;
+}
+
+.desserts {
+  animation: anim-menu 2.8s;
+}
+
+/*************** animation apparition check ***************/
 /*************** header ***************/
 .presentation {
   background-color: #F6F6F6;
@@ -414,27 +439,27 @@ form input {
   margin-top: -70px;
   border-radius: 40px 40px 0px 0px;
   padding: 0 20px;
+  row-gap: 40px;
 }
 .menu header {
   display: flex;
   align-items: center;
   position: relative;
+  justify-content: space-between;
 }
-.menu header i {
-  top: 38px;
-  right: -40px;
-  position: absolute;
-  font-size: 25px;
-  cursor: pointer;
-}
-.menu h1 {
+.menu header h1 {
   margin: 0;
   padding-top: 30px;
-  padding-bottom: 40px;
   font-family: "Shrikhand", cursive;
   font-size: 28px;
   font-weight: 400;
-  line-height: normal;
+}
+.menu header i {
+  padding-top: 30px;
+  right: -110px;
+  position: absolute;
+  font-size: 25px;
+  cursor: pointer;
 }
 .menu h2 {
   margin: 0;
@@ -446,46 +471,78 @@ form input {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 0;
 }
 .menu ul {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 10px 0 40px 0;
 }
 .menu li {
-  display: flex;
+  display: block;
+  overflow: hidden;
   width: 100%;
-  flex-direction: column;
-  align-items: flex-start;
   box-sizing: border-box;
-  height: 69px;
+  padding: 15px;
+  padding-bottom: 0px;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
-  padding: 15px;
-  gap: 5px;
+  cursor: pointer;
+  /*************** ANIMATION CARDS ***************/
+}
+.menu li:hover span {
+  transform: translateX(0px);
+  opacity: 1;
+}
+.menu li:hover span::after {
+  transform: translateX(100px);
+  opacity: 0;
+}
+.menu li:hover b {
+  transform: translateX(-60px);
+}
+.menu li:hover h3,
+.menu li:hover p {
+  width: 70%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu span {
+  display: block;
+  position: relative;
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  transform: translateX(100px);
+}
+.menu .fa-circle-check {
+  position: absolute;
+  bottom: 0px;
+  right: -15px;
+  font-size: 20px;
+  background: #99E2D0;
+  padding: 29px 20px;
+  border-radius: 0 15px 15px 0;
+  color: white;
 }
 .menu h3 {
-  margin: 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
+  padding-bottom: 5px;
+  margin: 0;
 }
 .menu p {
-  margin: 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 300;
+  margin: 0;
 }
 .menu b {
-  align-self: flex-end;
-  bottom: 24px;
+  display: flex;
+  justify-content: flex-end;
+  bottom: 18px;
   position: relative;
   font-size: 15px;
+  transition: all 0.4s;
 }
 .menu a {
   align-self: center;
@@ -499,11 +556,14 @@ form input {
   }
   .menu {
     width: 50%;
-    padding: 0 160px;
+    padding: 0 140px;
     box-sizing: content-box;
   }
   .menu header {
     align-self: center;
+  }
+  .menu header i {
+    right: -40px;
   }
 }
 

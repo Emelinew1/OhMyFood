@@ -6,7 +6,7 @@
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-    transition: all 1.5s ease-in-out;
+    transition: all 0.8s ease-in-out;
     background-image: $button;
 
     &:hover {
@@ -17,9 +17,9 @@
         content: "";
         opacity: 1;
         color: transparent;
-        background-clip: text; 
+        background-clip: text;
         -webkit-background-clip: text;
-        transition: all 1.5s ease-in-out;
+        transition: all 1.3s ease-in-out;
     }
 
     .heart:hover::after {
@@ -28,39 +28,6 @@
 }
 
 /*************** Loader ***************/
-
-.loader-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    background-color: $lightgrey;
-    z-index: 9999;
-    top: 0;
-    left:0;
-    animation: fadeOut 2s linear forwards;
-
-    .loader {
-        height: 200px;
-        width: 200px;
-        border-radius: 100px;
-        position: relative;
-        animation: rotate 2.5s linear infinite, changeColor 2s linear;
-    }
-    
-    .fork {
-        position: absolute;
-        color: black;
-        opacity: 0.8;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 4em;
-    }
-}
-
 @keyframes rotate {
     0% {
         transform: rotate(0turn);
@@ -87,18 +54,80 @@
 }
 
 @keyframes fadeOut {
-        0% {
-            opacity: 1;
-        }
-    
-        90% {
-            opacity: 0.7; 
-        }
-    
-        100% { 
-            opacity: 0;
-            z-index: -1;
-        }
+    0% {
+        opacity: 1;
     }
 
-    /*************** animation menu ***************/
+    90% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: $lightgrey;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    animation: fadeOut 2s linear forwards;
+
+    .loader {
+        height: 200px;
+        width: 200px;
+        border-radius: 100px;
+        position: relative;
+        animation: rotate 2.5s linear infinite, changeColor 2s linear;
+    }
+
+    .fork {
+        position: absolute;
+        color: black;
+        opacity: 0.8;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 4em;
+    }
+}
+
+
+
+/*************** animation apparition menu ***************/
+
+@keyframes anim-menu {
+    0% {
+        transform: translateX(-500px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.entrees {
+    animation: anim-menu 1s;
+}
+
+.plats {
+    animation: anim-menu 2s;
+}
+
+.desserts {
+    animation: anim-menu 2.8s;
+}
+
+/*************** animation apparition check ***************/
+
+ 
