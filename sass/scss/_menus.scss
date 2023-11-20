@@ -52,7 +52,7 @@
         display: flex;
         align-items: center;
         position: relative;
-        justify-content: space-between;
+        width: 100%;
 
         h1 {
             margin: 0;
@@ -64,7 +64,7 @@
         
         i {
             padding-top: 30px;
-            right: -110px;
+            right: 25px;
             position: absolute;
             font-size: 25px;
             cursor: pointer;
@@ -194,10 +194,13 @@
 
         header {
             align-self: center;
+            width: auto;
 
             i {
                 right: -40px;
             }
+
         }
+       
     }
 }

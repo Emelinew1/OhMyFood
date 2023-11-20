@@ -1,4 +1,4 @@
-/* ANIMATIONS */
+/***************ANIMATIONS***************/
 
 /*************** Heart ***************/
 .heart {
@@ -59,7 +59,7 @@
     }
 
     90% {
-        opacity: 0.7;
+        opacity: 0.8;
     }
 
     100% {
@@ -79,14 +79,14 @@
     z-index: 9999;
     top: 0;
     left: 0;
-    animation: fadeOut 2s linear forwards;
+    animation: fadeOut 1.5s linear forwards;
 
     .loader {
         height: 200px;
         width: 200px;
         border-radius: 100px;
         position: relative;
-        animation: rotate 2.5s linear infinite, changeColor 2s linear;
+        animation: rotate 1.5s linear infinite, changeColor 1.5s linear;
     }
 
     .fork {

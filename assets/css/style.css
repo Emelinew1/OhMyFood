@@ -1,9 +1,10 @@
 @charset "UTF-8";
-/* color */
-/* family font */
-/* font size */
-/* font weight */
-/* Général */
+/*color*/
+/*Family font*/
+/*font size*/
+/*font weight*/
+/*Général*/
+
 body {
   display: flex;
   flex-direction: column;
@@ -445,7 +446,7 @@ form input {
   display: flex;
   align-items: center;
   position: relative;
-  justify-content: space-between;
+  width: 100%;
 }
 .menu header h1 {
   margin: 0;
@@ -456,7 +457,7 @@ form input {
 }
 .menu header i {
   padding-top: 30px;
-  right: -110px;
+  right: 25px;
   position: absolute;
   font-size: 25px;
   cursor: pointer;
@@ -561,6 +562,7 @@ form input {
   }
   .menu header {
     align-self: center;
+    width: auto;
   }
   .menu header i {
     right: -40px;
