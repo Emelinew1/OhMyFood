@@ -2,9 +2,9 @@
 
 .header-menu {
     display: flex;
-    position: relative;
     justify-content: center;
     align-items: center;
+    position: relative;
     padding: 14px 13px 17px;
 
     a {
@@ -15,17 +15,17 @@
 
 /*************** conteneur du menu ***************/
 .main-menu {
-    background-color: $lightgrey;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
+    background-color: $lightgrey;
 
     figure {
         margin: 0;
         width: 100%;
-        object-fit: cover;
         height: 275px;
+        object-fit: cover;
     }
 
     img {
@@ -40,13 +40,14 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: $lightgrey;
     margin-top: -70px;
+    box-sizing: border-box;
     border-radius: 40px 40px 0px 0px;
     padding: 0 20px;
     row-gap: 40px;
+    width: 100%;
+    background-color: $lightgrey;
+   
 
     header {
         display: flex;
@@ -63,9 +64,9 @@
         }
         
         i {
-            padding-top: 30px;
-            right: 25px;
             position: absolute;
+            right: 25px;
+            padding-top: 30px;
             font-size: 25px;
             cursor: pointer;
         }
@@ -93,18 +94,19 @@
 
     li {
         display: block;
-        overflow: hidden;
-        width: 100%;
         box-sizing: border-box;
+        border-radius: 15px;
         padding: 15px;
         padding-bottom: 0px;
+        width: 100%; 
         background: $white;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        border-radius: 15px;
+        overflow: hidden;
         cursor: pointer;
 
 /*************** ANIMATION CARDS ***************/
-        &:hover span {
+        &:hover span,
+        &:focus span {
             transform: translateX(0px);
             opacity: 1;
 
@@ -115,13 +117,14 @@
             }
         }
 
-        &:hover b {
+        &:hover b,
+        &:focus b {
             transform: translateX(-60px);
 
         }
 
-        &:hover {
-
+        &:hover,
+        &:focus {
             h3,
             p {
                 width: 70%;
@@ -131,7 +134,6 @@
             }
         }
     }
-
 
     span {
         display: block;
@@ -145,31 +147,31 @@
         position: absolute;
         bottom: 0px;
         right: -15px;
+        border-radius: 0 15px 15px 0;
+        padding: 29px 20px;
         font-size: 20px;
         background: $third-color;
-        padding: 29px 20px;
-        border-radius: 0 15px 15px 0;
         color: white;
     }
 
     h3 {
-        font-size: $secondary-font-size;
-        font-weight: $medium-font-weight;
-        padding-bottom: 5px;
         margin: 0;
+        padding-bottom: 5px;
+        font-size: $secondary-font-size;
+        font-weight: $medium-font-weight;   
     }
 
     p {
-        font-size: 15px;
-        font-weight: $normal-font-weight;
         margin: 0;
+        font-size: 15px;
+        font-weight: $normal-font-weight;     
     }
 
     b {
         display: flex;
         justify-content: flex-end;
-        bottom: 18px;
         position: relative;
+        bottom: 18px; 
         font-size: 15px;
         transition: all 0.4s;
     }
@@ -188,10 +190,10 @@
     }
 
     .menu {
-        width: 50%;
-        padding: 0 140px;
         box-sizing: content-box;
-
+        padding: 0 140px;
+        width: 50%;
+        
         header {
             align-self: center;
             width: auto;

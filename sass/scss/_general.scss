@@ -26,18 +26,18 @@ a {
     text-decoration: none;
 }
 
-/* header*/
+/****** Header ***********/
 
 header:not(.menu header) {
     text-align: center;
 
     img {
-        height: 36px;
         padding: 14px 13px 17px;
+        height: 36px;
     }
 }
 
-/* footer */
+/****** Footer ***********/
 footer {
     padding: 22px 25px;
     background-color: $darkgrey;
