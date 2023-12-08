@@ -7,6 +7,6 @@ En plus des systèmes classiques de réservation, les clients pourront composer 
 
 Compétences évaluées: 
 
-Intégrer une maquette en mobile-first
-Mettre en œuvre des animations CSS
-Versionner son projet avec Git et Github
+- Intégrer une maquette en mobile-first
+- Mettre en œuvre des animations CSS
+- Versionner son projet avec Git et Github
